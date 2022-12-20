@@ -28,6 +28,23 @@
     <td><button class="delete-button" data-id="124">Delete</button></td>
   </tr>
 </table>
+<javascript>
+$('.delete-button').click(function() {
+  // Obtener el ID de la fila a eliminar
+  var id = $(this).data('id');
 
+  // Enviar la solicitud AJAX al servidor
+  $.ajax({
+    url: '/delete.php',
+    type: 'POST',
+    data: { id: id },
+    success: function(response) {
+      // Actualizar la tabla HTML aquí si la eliminación fue exitosa
+    }
+  });
+});
+
+  
+</javascript>
 </body>
 </html>
